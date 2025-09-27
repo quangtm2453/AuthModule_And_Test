@@ -1,0 +1,16 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# Build Folders
+bin/
+obj/
+
+# NuGet
+*.nupkg
+packages/
+
+# Test Results
+TestResults/

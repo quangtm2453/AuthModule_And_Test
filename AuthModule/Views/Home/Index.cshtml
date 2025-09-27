@@ -1,0 +1,45 @@
+﻿<h2>Home</h2>
+<p>Bạn đã đăng nhập.</p>
+<form asp-controller="Auth" asp-action="Logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 40px;
+        color: #333;
+    }
+
+    h2 {
+        text-align: center;
+        color: #007bff;
+        margin-bottom: 20px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 6px;
+        border: none;
+        background: #dc3545; /* đỏ */
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+        button:hover {
+            background: #a71d2a; /* đỏ đậm khi hover */
+        }
+</style>

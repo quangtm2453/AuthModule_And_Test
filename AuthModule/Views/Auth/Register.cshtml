@@ -1,0 +1,110 @@
+﻿@model AuthModule.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    form {
+        max-width: 350px;
+        margin: 40px auto; /* căn giữa ngang */
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #fff;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1.2rem;
+        color: #333;
+    }
+
+    div {
+        margin-bottom: 1rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #444;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.2s;
+    }
+
+        input:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        background: #007bff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+    p {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    span {
+        color: red;
+        font-size: 0.9em;
+    }
+</style>
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label>Username</label>
+        <input asp-for="Username" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+    <div>
+        <label>Password</label>
+        <input asp-for="Password" type="password" />
+    </div>
+    <div>
+        <label>Role</label>
+        <select asp-for="Role">
+            <option>User</option>
+            <option>Admin</option>
+        </select>
+    </div>
+    <button type="submit">Register</button>
+</form>
+<p><a asp-action="Login">Back to Login</a></p>
