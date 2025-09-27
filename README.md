@@ -1,7 +1,9 @@
 # AuthModule
 
-Project **Authentication Module** bằng ASP.NET Core MVC, kèm **xUnit test project**.
+Project **Authentication Module** bằng ASP.NET Core MVC, kèm **xUnit test project**.  
+Hỗ trợ chức năng đăng ký, đăng nhập, logout và RememberMe cookie.
 
+---
 
 ## 1. Yêu cầu
 
@@ -9,35 +11,31 @@ Project **Authentication Module** bằng ASP.NET Core MVC, kèm **xUnit test pro
 - MySQL (5.7+ hoặc 8.0+)  
 - Visual Studio 2022 hoặc VS Code  
 
+---
 
-## 2. Cài đặt và cấu hình
+## 2. Cài đặt
 
-### 2.1 Restore packages
+1. Restore packages:
 
 ```bash
 dotnet restore
-2.2 Cấu hình MySQL
-Mở file appsettings.json trong project MVC và chỉnh connection string:
 
+```
+2. Cấu hình MySQL trong appsettings.json:
+```bash
 "ConnectionStrings": {
   "DefaultConnection": "server=localhost;port=3306;database=AuthModuleDb;user=root;password=YourPassword;"
 }
-
+```
 3. Migration & Database
-3.1 Tạo migration
-    dotnet ef migrations add InitialCreate
-3.2 Áp dụng migration
-
-    dotnet ef database update
-
+```bash
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
 4. Chạy project MVC
-
-    dotnet run --project AuthModule
-
-Chức năng: đăng ký, đăng nhập, logout, session và cookie RememberMe.
-
+```bash
+dotnet run --project AuthModule
+```
 5. Chạy xUnit Tests
-
+```bash
 dotnet test AuthModule.Tests
-Chạy tất cả test trong project test.
-
